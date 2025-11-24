@@ -1,0 +1,6 @@
+user_id,recording_id,language,duration,rec_url_gcp,transcription_url,metadata_url
+user_001,rec_001,hi,5.2,https://storage.googleapis.com/example/audio_001.wav,https://storage.googleapis.com/example/transcript_001.txt,https://storage.googleapis.com/example/meta_001.json
+user_001,rec_002,hi,3.8,https://storage.googleapis.com/example/audio_002.wav,https://storage.googleapis.com/example/transcript_002.txt,https://storage.googleapis.com/example/meta_002.json
+user_002,rec_003,hi,7.5,https://storage.googleapis.com/example/audio_003.wav,https://storage.googleapis.com/example/transcript_003.txt,https://storage.googleapis.com/example/meta_003.json
+user_002,rec_004,hi,4.1,https://storage.googleapis.com/example/audio_004.wav,https://storage.googleapis.com/example/transcript_004.txt,https://storage.googleapis.com/example/meta_004.json
+user_003,rec_005,hi,6.9,https://storage.googleapis.com/example/audio_005.wav,https://storage.googleapis.com/example/transcript_005.txt,https://storage.googleapis.com/example/meta_005.json

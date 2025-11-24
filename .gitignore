@@ -20,6 +20,9 @@ wheels/
 .installed.cfg
 *.egg
 
+# Configuration
+config.py
+
 # Virtual environments
 venv/
 env/
@@ -50,6 +53,7 @@ data_cache/
 *.csv
 !requirements.txt
 !evaluation_results.csv
+!training_data_template.csv
 
 # Model files
 *.bin
