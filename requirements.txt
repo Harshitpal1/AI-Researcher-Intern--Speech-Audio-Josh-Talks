@@ -1,0 +1,22 @@
+# Core ML and ASR libraries
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+accelerate>=0.25.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Evaluation metrics
+jiwer>=3.0.0
+evaluate>=0.4.0
+
+# Data handling
+pandas>=2.0.0
+numpy>=1.24.0
+tqdm>=4.65.0
+requests>=2.31.0
+
+# Hugging Face Hub
+huggingface-hub>=0.19.0
