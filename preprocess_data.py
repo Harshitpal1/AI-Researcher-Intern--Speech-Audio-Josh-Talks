@@ -234,9 +234,9 @@ class DataPreprocessor:
         # Create HuggingFace Dataset
         dataset = Dataset.from_dict(processed_data)
         
-        # Note: Audio column would typically be cast to Audio feature type
-        # This requires actual audio file paths or bytes
-        # dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+        # Audio column is stored as URLs for now
+        # To cast to Audio feature type, audio files need to be downloaded and cached locally
+        # This can be done in the fine-tuning script: dataset.cast_column("audio", Audio(sampling_rate=16000))
         
         return dataset
     

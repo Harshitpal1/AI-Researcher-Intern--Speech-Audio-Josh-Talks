@@ -243,6 +243,9 @@ def main():
     pretrained_model = "openai/whisper-small"
     finetuned_model = "./whisper-small-hi-finetuned"
     
+    # Set to None to evaluate on full test set, or specify a number for quick testing
+    max_samples = None
+    
     # Check if fine-tuned model exists
     if not os.path.exists(finetuned_model):
         logger.warning(f"Fine-tuned model not found at {finetuned_model}")
@@ -260,10 +263,6 @@ def main():
     if test_dataset is None:
         logger.error("Failed to load test dataset")
         return
-    
-    # For demonstration, limit to a small subset
-    # Remove max_samples parameter to evaluate on full test set
-    max_samples = 50  # Set to None to evaluate full dataset
     
     if evaluate_finetuned:
         # Compare both models

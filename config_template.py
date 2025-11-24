@@ -109,7 +109,11 @@ LOG_LEVEL = "INFO"
 Usage:
 1. Copy this file to config.py
 2. Modify parameters as needed
-3. Import in your scripts: from config import *
+3. Import in your scripts: import config
+
+Example:
+    import config
+    model = WhisperFineTuner(model_name=config.BASE_MODEL_NAME)
 
 Example modifications for different scenarios:
 

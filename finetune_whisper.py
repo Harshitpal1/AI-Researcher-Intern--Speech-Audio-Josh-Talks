@@ -255,6 +255,9 @@ def main():
     model_name = "openai/whisper-small"
     output_dir = "./whisper-small-hi-finetuned"
     
+    # Set to None to use full dataset, or specify a number for testing (e.g., 100)
+    sample_limit = None
+    
     # Check if preprocessed data exists
     if not os.path.exists(preprocessed_data_path):
         logger.error(f"Preprocessed data not found at {preprocessed_data_path}")
@@ -265,15 +268,13 @@ def main():
     logger.info(f"Loading preprocessed data from {preprocessed_data_path}")
     dataset = load_from_disk(preprocessed_data_path)
     
-    # For demonstration, we'll use a small subset
-    # In production, you would use the full dataset and split properly
-    if len(dataset) > 100:
-        dataset = dataset.select(range(100))
-        logger.info(f"Using subset of 100 samples for demonstration")
+    # Optionally limit dataset size for testing
+    if sample_limit and len(dataset) > sample_limit:
+        dataset = dataset.select(range(sample_limit))
+        logger.info(f"Limited to {sample_limit} samples for testing")
     
     # Cast audio column to Audio feature
-    # Note: This assumes audio files are accessible at the URLs
-    # In production, you might need to download and cache them first
+    # This assumes audio files are accessible at the URLs or have been downloaded
     dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
     
     # Split into train and validation
